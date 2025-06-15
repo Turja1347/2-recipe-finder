@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Finder App</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1><i class="fas fa-utensils"></i>  Recipe Finder</h1>
-            <p>Find delicious recipes from around the world</p>
-        </header>
+      <header>
+        <h1><i class="fas fa-utensils" aria-hidden="true"></i> Recipe Finder</h1>
+        <p>Find delicious recipes from around the world</p>
+      </header>
 
-        <p class="api-link">
-            Data from <a href="https://www.themealdb.com/"> ThemealDB 👨‍🍳</a></p>
+      <p class="api-link">
+        Data from
+        <a href="https://www.themealdb.com/api.php" target="_blank" rel="noopener noreferrer"
+          >TheMealDB 🧑‍🍳</a
+        >
+      </p>
 
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search for meals or keywords">
-            <button id="search-btn">Search</button>
+      <main>
+        <div class="search-container" role="search">
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search for meals or keywords"
+            aria-label="Search for meals"
+          />
+          <button id="search-btn" aria-label="Search meals">Search</button>
         </div>
 
-        <div class="error-container" class="hidden">
-            <p>No meals found. Try another search term! </p>
+        <div id="error-container" class="hidden" role="alert" aria-live="polite">
+          <p>No meals found. Try another search term!</p>
         </div>
-        
-        <div id="result-heading"></div>
-        <div id="meals" class="meals-container"></div>
-        <div id="meals-details" class="hidden">
-            <button id="back-btn"><i class="fas fa-arrow-left"></i> Back to recipes</button>
-            <div class="meal-details-content"></div>
-        </div>
+
+        <div id="result-heading" role="status" aria-live="polite"></div>
+
+        <section id="meals" class="meals-container" aria-label="Meals list"></section>
+
+        <section id="meal-details" class="hidden" aria-label="Meal Details">
+          <button id="back-btn" aria-label="Go back to recipe list">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to recipes
+          </button>
+
+          <div class="meal-details-content"></div>
+        </section>
+      </main>
     </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
