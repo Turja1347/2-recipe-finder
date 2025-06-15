@@ -217,3 +217,24 @@ button:hover {
     width: 100%;
 }
 
+.ingredients-list li {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+
+.ingredients-list li i {
+    color: var(--secondary);
+    margin: 8px;
+}
+
+.youtube-link {
+    display: inline-block;
+    background-color: #ff0000;
+    color: white;
+    padding: 8px 16px;
+    
+}
