@@ -75,7 +75,7 @@ function displayMeals(meals) {
     .join("");
 }
 
-// Clicked a meal card - show details
+// Clicked a meal card - show detail
 async function handleMealClick(e) {
   const mealEl = e.target.closest(".meal");
   if (!mealEl) return;
