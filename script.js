@@ -23,7 +23,7 @@ searchInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") searchMeals();
 });
 
-// Search for meals by name
+// Search for meals  by name
 async function searchMeals() {
   const searchTerm = searchInput.value.trim();
 
